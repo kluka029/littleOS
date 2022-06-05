@@ -25,7 +25,6 @@ os.iso: kernel.elf
 		iso
 
 run: os.iso
-	#bochs -f bochsrc.txt -q   This is fucking broken
 	qemu-system-i386 -enable-kvm -boot d -cdrom os.iso -m 4 -serial stdio
 
 %.o: %.c
